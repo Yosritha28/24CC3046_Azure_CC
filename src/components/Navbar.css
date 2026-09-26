@@ -1,0 +1,167 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(247, 249, 251, 0.92);
+  backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid rgba(223, 231, 235, 0.8);
+}
+
+.navbar-container {
+  width: min(1180px, 92%);
+  min-height: 78px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 32px;
+}
+
+/* Brand */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 11px;
+
+  background: var(--navy);
+  color: var(--white);
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.brand-name {
+  color: var(--navy);
+
+  font-size: 18px;
+  font-weight: 700;
+
+  letter-spacing: -0.3px;
+}
+
+.brand-name span {
+  color: var(--teal);
+}
+
+/* Navigation */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  position: relative;
+
+  color: var(--muted);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--teal);
+
+  transition: width 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--navy);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Contact */
+
+.nav-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 17px;
+
+  border-radius: 999px;
+
+  background: var(--navy);
+  color: var(--white);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-contact span {
+  font-size: 16px;
+}
+
+.nav-contact:hover {
+  background: var(--teal);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 850px) {
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-container {
+    min-height: 70px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-contact {
+    padding: 9px 13px;
+  }
+
+  .brand-name {
+    font-size: 16px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+  }
+}
